@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getNotionProperties } from '../utils';
+import saladImg from "../assets/salad.webp";
+import { Image } from 'astro:assets';
 
 const notionRecipe = await getNotionProperties({
 	auth: import.meta.env.NOTION_API_KEY,
@@ -38,7 +40,7 @@ const recipe = await Promise.all(
 							{item.img !== '' ? (
 								<img src={item?.img} alt="" width={200} height={200} />
 							) : (
-								<img src="/salad.webp" alt="" width={150} height={150} />
+								<Image src={saladImg} alt=""/>
 							)}
 						</div>
 						<div>
