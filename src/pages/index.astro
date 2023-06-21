@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import { getNotionProperties } from '../utils';
 import saladImg from "../assets/salad.webp";
 import { Image } from 'astro:assets';
+import { inject } from '@vercel/analytics';
+ 
+ inject();
 
 const notionRecipe = await getNotionProperties({
 	auth: import.meta.env.NOTION_API_KEY,
