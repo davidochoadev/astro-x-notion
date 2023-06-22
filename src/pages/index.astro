@@ -3,14 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import { getNotionProperties, getNotionSandwich } from '../utils';
 import saladImg from "../assets/salad.webp";
 import { Image } from 'astro:assets';
+import menu from '../../data.json'
+import fs from "fs";
+import MenuComponent from '../components/MenuComponent';
 
 /* const notionOther = await getNotionProperties({
 	auth: import.meta.env.NOTION_API_KEY,
 }); */
 
-const notionSandwich = await getNotionSandwich({
+/* const notionSandwich = await getNotionSandwich({
 	auth: import.meta.env.NOTION_API_KEY,
-})
+}) */
 
 /* const other = await Promise.all(
 	notionOther.map(async ({ properties }: any) => {
@@ -32,9 +35,9 @@ const notionSandwich = await getNotionSandwich({
 	})
 ); */
 
-const sandwich = await Promise.all(
+/* const sandwich = await Promise.all(
 	notionSandwich.map(async ({ properties }: any) => {
-		console.log("recipe",properties.Description);
+		console.log("recipe",properties);
 		let title = '';
 		let img = '';
 		let description = '';
@@ -52,83 +55,32 @@ const sandwich = await Promise.all(
 		return { img, title, isAvailable, price, description };
 	})
 );
+
+const saveObjectsToJson = async (objects, filename) => {
+  try {
+    const json = JSON.stringify(objects, null, 2);
+    await fs.promises.writeFile(filename, json);
+    console.log(`Data saved as ${filename}`);
+  } catch (error) {
+    console.error('Error saving data as JSON file:', error);
+  }
+};
+ */
+// Example usage
+/* saveObjectsToJson(sandwich, 'data.json'); */
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="grid gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto max-w-screen-2xl px-4 sm:px-6 min-h-[calc(100lvh-80px)]">
-		<aside class="w-full align-middle sm:sticky sm:h-1 sm:top-32 pt-24 sm:pt-0 md:w-2/6 p-4 border border-red-500">
-			<div class="flex items-center mb-8">
-				<div class="flex-1">
-					<p class="text-3xl font-bold text-orange-200">Menu</p>
-				</div>
-			</div>
-			<div class="overflow-y-auto hidden sm:flex flex-col py-4 px-3 rounded-xl bg-gray-800 border border-gray-700 max-h-[calc(100dvh-250px)]" id="desktop-menu">
-				<p class="text-white">Desktop menu</p>
-			</div>
-			<div class="flex flex-row sm:hidden gap-2 overflow-x-auto" id="mobile-menu">
-				<button class="rounded-xl p-3 bg-zinc-700 flex flex-row gap-2">
-					<p class="text-xl">🥪</p>
-					<p class="text-lg">Sandwich</p>
-				</button>
-				<button class="rounded-xl p-3 bg-zinc-700 flex flex-row gap-2">
-					<p class="text-xl">🥤</p>
-					<p class="text-lg">Drinks</p>
-				</button>
-				<button class="rounded-xl p-3 bg-zinc-700 flex flex-row gap-2">
-					<p class="text-xl">🍱</p>
-					<p class="text-lg">Others</p>
-				</button>
-			</div>
-		</aside>
-		<div class="flex flex-row flex-wrap gap-2 p-4 sm:col-span-2 lg:col-span-3 2xl:col-span-4 sm:pt-28">
+
+
+<!-- 		<div class="flex flex-row flex-wrap gap-2 p-4 sm:col-span-2 lg:col-span-3 2xl:col-span-4 sm:pt-28">
 			<div class="flex items-center mb-8 w-full">
 				<div class="flex-1"><p class="text-3xl font-bold text-orange-200">Sandwich</p></div>
-			</div>
-			{
-				sandwich.map((item) => (
-					<div class="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-zinc-700 bg-zinc-800 p-6">
-						<div class="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
-							{item.img !== '' ? (
-								<Image src={item?.img} alt="Food" width={200} height={200} format="avif" />
-							) : (
-								<Image src={saladImg} alt=""/>
-							)}
-						</div>
-						<div class="text-center">
-							<h4 class="my-2 flex text-2xl font-bold text-gray-100">
-								{item?.title !== '' ? item?.title : 'N/A'}
-							</h4>
-							{item?.description !== '' && (
-								<p class="text-md my-2 text-gray-400">{item?.description}</p>
-							)}
-							<div class="pt-2">
-								{item?.isAvailable ? (
-									<div class=" my-2 flex w-min flex-row items-center gap-2 rounded-xl bg-green-300 p-1 px-2 text-xs">
-										<div class="h-[5px] w-[5px] rounded-full bg-green-500" />
-										<p class="text-gray-800">Available</p>
-									</div>
-								) : (
-									<div class=" my-2 flex w-max flex-row items-center gap-2 rounded-xl bg-red-300 p-1 px-2 text-xs">
-										<div class="h-[5px] w-[5px] rounded-full bg-red-500" />
-										<p class="text-gray-800">Not Available</p>
-									</div>
-								)}
-							</div>
-							<p class="text-md text-amber-400">
-								{item?.price
-									? item?.price.toLocaleString('en-US', {
-											style: 'currency',
-											currency: 'USD'
-									  })
-									: 'N/A'}
-							</p>
-						</div>
-					</div>
-				))
-			}
-			<div class="flex items-center mb-8 w-full">
+			</div> -->
+			<MenuComponent menu={menu}/>
+<!-- 			<div class="flex items-center mb-8 w-full">
 				<div class="flex-1"><p class="text-3xl font-bold text-orange-200">Other</p></div>
-			</div>
+			</div> -->
 <!-- 			{
 				other.map((item) => (
 					<div class="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6">
@@ -171,6 +123,6 @@ const sandwich = await Promise.all(
 					</div>
 				))
 			} -->
-		</div>
+<!-- 		</div> -->
 	</main>
 </Layout>
