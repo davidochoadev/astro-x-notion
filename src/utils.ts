@@ -13,15 +13,55 @@ export const getNotionItems = async (options: ClientOptions) => {
 };
 
 export const getNotionProperties = async (options: ClientOptions) => {
+  console.log("Getting Others...");
   const notion = new Client(options);
 
   const response = await notion.databases.query({
     database_id: import.meta.env.NOTION_DATABASE,
     filter: {
-      property: "Public",
-      checkbox: {
-        equals: true
-      }
+      "and": [
+        {
+          "property": "Public",
+          "checkbox": {
+            "equals": true
+          }
+        },
+        {
+          "property": "Category",
+          "select": {
+            "is_empty": true
+          }
+        }
+      ]
+    },
+  });
+
+  return response.results
+  .filter((page) => 'properties' in page)
+  .map((page) => page);
+}
+
+export const getNotionSandwich = async (options: ClientOptions) => {
+  console.log("Getting Sandwiches...");
+  const notion = new Client(options);
+
+  const response = await notion.databases.query({
+    database_id: import.meta.env.NOTION_DATABASE,
+    filter: {
+      "and": [
+        {
+          "property": "Public",
+          "checkbox": {
+            "equals": true
+          }
+        },
+        {
+          "property": "Category",
+          "select": {
+            "equals": "Sandwich"
+          }
+        }
+      ]
     },
   });
 
