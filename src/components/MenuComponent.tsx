@@ -6,7 +6,7 @@ export function MenuComponent({ sandwiches, drink, other }) {
   const [otherIsView, setOtherIsView] = useState(false);
 
   return (
-    <main className="grid gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto max-w-screen-2xl px-4 sm:px-6 min-h-[calc(100lvh-80px)]">
+    <main className="grid gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto max-w-screen-2xl px-2 sm:px-6 min-h-[calc(100lvh-80px)]">
       <aside className="w-full align-middle sm:sticky pt-10 sm:h-1 sm:top-0 sm:mt-24 sm:pt-4 sm:w-full p-4">
         <div className="flex items-center mb-10">
           <div className="flex-1">

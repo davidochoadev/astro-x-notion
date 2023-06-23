@@ -4,7 +4,7 @@ import home from "../assets/home-outline.svg";
 import book from "../assets/book-outline.svg";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
-const active = "text-red-500"
+console.log("path is",currentPath);
 ---
 
 <header
