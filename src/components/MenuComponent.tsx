@@ -7,26 +7,20 @@ export function MenuComponent({ sandwiches, drink, other }) {
 
   return (
     <main className="grid gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto max-w-screen-2xl px-4 sm:px-6 min-h-[calc(100lvh-80px)]">
-      <aside className="w-full align-middle sm:sticky sm:h-1 sm:top-32 pt-24 sm:pt-0 md:w-2/6 p-4 border border-red-500">
-        <div className="flex items-center mb-8">
+      <aside className="w-full align-middle sm:sticky pt-10 sm:h-1 sm:top-0 sm:mt-24 sm:pt-4 sm:w-full p-4">
+        <div className="flex items-center mb-10">
           <div className="flex-1">
             <p className="text-3xl font-bold text-orange-200">Menu</p>
           </div>
         </div>
         <div
-          className="overflow-y-auto hidden sm:flex flex-col py-4 px-3 rounded-xl bg-gray-800 border border-gray-700 max-h-[calc(100dvh-250px)]"
-          id="desktop-menu"
-        >
-          <p className="text-white">Desktop menu</p>
-        </div>
-        <div
-          className="flex flex-row sm:hidden gap-2 overflow-x-auto py-4"
+          className="flex flex-row gap-4 overflow-x-auto py-4 px-4 sm:overflow-y-auto sm:flex-col rounded-xl bg-gray-800 border border-gray-700 max-h-[calc(100dvh-250px)]"
           id="mobile-menu"
         >
           <button
             className={`rounded-xl p-3 ${
-              sandwichIsView === true ? "bg-orange-400" : "bg-zinc-700"
-            } flex flex-row gap-2`}
+              sandwichIsView === true ? "bg-orange-400" : "bg-zinc-700 hover:bg-orange-400"
+            } flex flex-row gap-2 group`}
             id="sandwich"
             onClick={() => {
               if (sandwichIsView === false) {
@@ -38,15 +32,15 @@ export function MenuComponent({ sandwiches, drink, other }) {
           >
             <p className="text-xl">🥪</p>
             <p
-              className={`${sandwichIsView ? "text-slate-700" : "text-white"}`}
+              className={`${sandwichIsView ? "text-slate-700" : "text-white group-hover:text-slate-700"}`}
             >
               Sandwich
             </p>
           </button>
           <button
             className={`rounded-xl p-3 ${
-              drinkIsView === true ? "bg-orange-400" : "bg-zinc-700"
-            }  flex flex-row gap-2`}
+              drinkIsView === true ? "bg-orange-400" : "bg-zinc-700 hover:bg-orange-400"
+            }  flex flex-row gap-2 group`}
             onClick={() => {
               if (drinkIsView === false) {
                 setSandwichIsView(false);
@@ -56,13 +50,13 @@ export function MenuComponent({ sandwiches, drink, other }) {
             }}
           >
             <p className="text-xl">🥤</p>
-            <p className={`${drinkIsView ? "text-slate-700" : "text-white"}`}>
+            <p className={`${drinkIsView ? "text-slate-700" : "text-white group-hover:text-slate-700"}`}>
               Drinks
             </p>
           </button>
           <button
             className={`rounded-xl p-3 ${
-              otherIsView === true ? "bg-orange-400" : "bg-zinc-700"
+              otherIsView === true ? "bg-orange-400" : "bg-zinc-700 hover:bg-orange-400 group"
             }  flex flex-row gap-2`}
             onClick={() => {
               if (otherIsView === false) {
@@ -73,7 +67,7 @@ export function MenuComponent({ sandwiches, drink, other }) {
             }}
           >
             <p className="text-xl">🍱</p>
-            <p className={`${otherIsView ? "text-slate-700" : "text-white"}`}>Others</p>
+            <p className={`${otherIsView ? "text-slate-700" : "text-white group-hover:text-slate-700"}`}>Others</p>
           </button>
         </div>
       </aside>
