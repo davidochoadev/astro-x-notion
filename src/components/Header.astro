@@ -10,7 +10,7 @@ console.log("i'm :", currentPath);
 <header 
    class="fixed bottom-0 w-full h-max flex flex-row justify-center items-center"
 >
-   <nav
+   <nav id="navbar"
       class="border border-slate-700 w-full mx-4 my-4 bg-slate-800 rounded-xl p-4 flex flex-row justify-center items-center gap-6"
    >
       <a href="/" class={`flex flex-col justify-center items-center w-20 ${currentPath === "" ? "text-orange-400" : "hover:text-orange-400"}`}>
@@ -91,3 +91,14 @@ console.log("i'm :", currentPath);
       </a>
    </nav>
 </header>
+
+<script>
+   const nav = document.querySelector("#navbar");
+   const navLinks = nav.querySelectorAll("a");
+   const currentUrl = window.location.href;
+   navLinks.forEach((link) => {
+      if(link.href === currentUrl) {
+         link.classList.add('text-orange-400');
+      }
+   });
+</script>
