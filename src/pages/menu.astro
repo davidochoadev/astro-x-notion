@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../styles/base.css';
+import { getNotionProperties, getNotionSandwich } from '../utils';
+import saladImg from "../assets/salad.webp";
+import { Image } from 'astro:assets';
+import menu from '../../data.json'
+import fs from "fs";
+import MenuComponent from '../components/MenuComponent';
+
+/* const notionOther = await getNotionProperties({
+	auth: import.meta.env.NOTION_API_KEY,
+}); */
+
+/* const notionSandwich = await getNotionSandwich({
+	auth: import.meta.env.NOTION_API_KEY,
+}) */
+
+/* const other = await Promise.all(
+	notionOther.map(async ({ properties }: any) => {
+		let title = '';
+		let img = '';
+		let description = '';
+		if (properties.Picture.files[0]) {
+			img = properties.Picture.files[0].file.url || '';
+		}
+		if (properties.Title.title[0]) {
+			title = properties.Title.title[0].plain_text || '';
+		}
+		if (properties.Description.rich_text[0]) {
+			description = properties.Description.rich_text[0].plain_text || '';
+		}
+		const isAvailable = properties.Available.checkbox;
+		const price = properties.Price.number;
+		return { img, title, isAvailable, price, description };
+	})
+); */
+
+/* const sandwich = await Promise.all(
+	notionSandwich.map(async ({ properties }: any) => {
+		console.log("recipe",properties);
+		let title = '';
+		let img = '';
+		let description = '';
+		if (properties.Picture.files[0]) {
+			img = properties.Picture.files[0].file.url || '';
+		}
+		if (properties.Title.title[0]) {
+			title = properties.Title.title[0].plain_text || '';
+		}
+		if (properties.Description.rich_text[0]) {
+			description = properties.Description.rich_text[0].plain_text || '';
+		}
+		const isAvailable = properties.Available.checkbox;
+		const price = properties.Price.number;
+		return { img, title, isAvailable, price, description };
+	})
+);
+
+const saveObjectsToJson = async (objects, filename) => {
+  try {
+    const json = JSON.stringify(objects, null, 2);
+    await fs.promises.writeFile(filename, json);
+    console.log(`Data saved as ${filename}`);
+  } catch (error) {
+    console.error('Error saving data as JSON file:', error);
+  }
+};
+ */
+// Example usage
+/* saveObjectsToJson(sandwich, 'data.json'); */
+---
+
+<Layout title="Welcome to Astro.">
+
+
+<!-- 		<div class="flex flex-row flex-wrap gap-2 p-4 sm:col-span-2 lg:col-span-3 2xl:col-span-4 sm:pt-28">
+			<div class="flex items-center mb-8 w-full">
+				<div class="flex-1"><p class="text-3xl font-bold text-orange-200">Sandwich</p></div>
+			</div> -->
+			<MenuComponent sandwiches={menu} drink={menu} other={menu} client:load/>
+<!-- 			<div class="flex items-center mb-8 w-full">
+				<div class="flex-1"><p class="text-3xl font-bold text-orange-200">Other</p></div>
+			</div> -->
+<!-- 			{
+				other.map((item) => (
+					<div class="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6">
+						<div class="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
+							{item.img !== '' ? (
+								<Image src={item?.img} alt="Food" width={200} height={200} format="avif" />
+							) : (
+								<Image src={saladImg} alt=""/>
+							)}
+						</div>
+						<div>
+							<h4 class="my-2 flex text-2xl font-bold text-gray-100">
+								{item?.title !== '' ? item?.title : 'N/A'}
+							</h4>
+							{item?.description !== '' && (
+								<p class="text-md my-2 text-gray-400">{item?.description}</p>
+							)}
+							<div>
+								{item?.isAvailable ? (
+									<div class=" my-2 flex w-min flex-row items-center gap-2 rounded-xl bg-green-300 p-1 px-2 text-xs">
+										<div class="h-[5px] w-[5px] rounded-full bg-green-500" />
+										<p class="text-gray-800">Available</p>
+									</div>
+								) : (
+									<div class=" my-2 flex w-max flex-row items-center gap-2 rounded-xl bg-red-300 p-1 px-2 text-xs">
+										<div class="h-[5px] w-[5px] rounded-full bg-red-500" />
+										<p class="text-gray-800">Not Available</p>
+									</div>
+								)}
+							</div>
+							<p class="text-md text-amber-400">
+								{item?.price
+									? item?.price.toLocaleString('en-US', {
+											style: 'currency',
+											currency: 'USD'
+									  })
+									: 'N/A'}
+							</p>
+						</div>
+					</div>
+				))
+			} -->
+<!-- 		</div> -->
+	</main>
+</Layout>
