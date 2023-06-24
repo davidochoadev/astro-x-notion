@@ -12,6 +12,10 @@ export function MenuComponent({ sandwiches, categories }) {
    (item) => item.category === activeCategory
  );
 
+ function getFilteredItemsCount(items, activeCategory) {
+   return items.filter((item) => item.category === activeCategory).length;
+ }
+
  function getCategoryName(category : any) {
    if (typeof category === 'string') {
       return category.split(' ')[1];
@@ -31,26 +35,29 @@ export function MenuComponent({ sandwiches, categories }) {
           className="flex flex-row gap-4 overflow-x-auto py-4 px-4 sm:overflow-y-auto sm:flex-col rounded-xl bg-gray-800 border border-gray-700 max-h-[calc(100dvh-250px)]"
           id="mobile-menu"
         >
+         {/* CHECK AVAILABLE ITEMS */}
           {categories.map((category, index) => (
-            <button
-              key={index}
-              className={`rounded-xl p-3 ${
-                activeCategory === category
-                  ? "bg-orange-400"
-                  : "bg-zinc-700 hover:bg-orange-400"
-              } group min-w-max`}
-              onClick={() => handleCategoryClick(category)}
-            >
-              <p
-                className={`${
-                  activeCategory === category
-                    ? "text-slate-700"
-                    : "text-white group-hover:text-slate-700"
-                } `}
-              >
-                {category}
-              </p>
-            </button>
+            getFilteredItemsCount(sandwiches, category) !== 0 && (
+               <button
+               key={index}
+               className={`rounded-xl p-3 ${
+                 activeCategory === category
+                   ? "bg-orange-400"
+                   : "bg-zinc-700 hover:bg-orange-400"
+               } group min-w-max`}
+               onClick={() => handleCategoryClick(category)}
+             >
+               <p
+                 className={`${
+                   activeCategory === category
+                     ? "text-slate-700"
+                     : "text-white group-hover:text-slate-700"
+                 } `}
+               >
+                 {category}
+               </p>
+             </button>
+            )
           ))}
         </div>
       </aside>
