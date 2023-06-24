@@ -71,7 +71,7 @@ export function MenuComponent({ sandwiches, drink, other }) {
           </button>
         </div>
       </aside>
-      <div className="flex flex-row flex-wrap gap-2 p-4 sm:col-span-2 lg:col-span-3 2xl:col-span-4 sm:pt-28">
+      <div className="flex flex-row flex-wrap gap-2 p-4 sm:col-span-2 lg:col-span-3 2xl:col-span-4 sm:pt-28 pb-28">
         {sandwichIsView && (
           <>
             <div className="flex items-center mb-8 w-full">
@@ -84,13 +84,13 @@ export function MenuComponent({ sandwiches, drink, other }) {
                 className="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6"
                 key={index}
               >
-                <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
+{/*                 <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
                   {item.img !== "" ? (
                     <img src={item?.img} alt="Food" width={200} height={200} />
                   ) : (
                     <img src="../assets/salad.webp" alt="" />
                   )}
-                </div>
+                </div> */}
                 <div>
                   <h4 className="my-2 flex text-2xl font-bold text-gray-100">
                     {item?.title !== "" ? item?.title : "N/A"}
@@ -138,13 +138,13 @@ export function MenuComponent({ sandwiches, drink, other }) {
                 className="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6"
                 key={index}
               >
-                <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
+{/*                 <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
                   {item.img !== "" ? (
                     <img src={item?.img} alt="Food" width={200} height={200} />
                   ) : (
                     <img src="../assets/salad.webp" alt="" />
                   )}
-                </div>
+                </div> */}
                 <div>
                   <h4 className="my-2 flex text-2xl font-bold text-gray-100">
                     {item?.title !== "" ? item?.title : "N/A"}
@@ -192,13 +192,13 @@ export function MenuComponent({ sandwiches, drink, other }) {
                 className="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6"
                 key={index}
               >
-                <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
+{/*                 <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
                   {item.img !== "" ? (
                     <img src={item?.img} alt="Food" width={200} height={200} />
                   ) : (
                     <img src="../assets/salad.webp" alt="" />
                   )}
-                </div>
+                </div> */}
                 <div>
                   <h4 className="my-2 flex text-2xl font-bold text-gray-100">
                     {item?.title !== "" ? item?.title : "N/A"}
