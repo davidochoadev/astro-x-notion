@@ -5,13 +5,16 @@ export function MenuComponent({ sandwiches, categories }) {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   const handleCategoryClick = (category) => {
-   console.log(category);
     setActiveCategory(category);
   };
 
   const filtered = sandwiches.filter(
    (item) => item.category === activeCategory
  );
+
+ const getCategoryName = (category) => {
+   return category.split(' ')[1];
+ };
 
  console.log(filtered);
 
@@ -131,7 +134,7 @@ export function MenuComponent({ sandwiches, categories }) {
           <>
             <div className="flex items-center mb-8 w-full">
               <div className="flex-1">
-                <p className="text-3xl font-bold text-orange-200">Sandwich</p>
+                <p className="text-3xl font-bold text-orange-200">{getCategoryName(activeCategory)}</p>
               </div>
             </div>
             {filtered.map((item, index) => (
