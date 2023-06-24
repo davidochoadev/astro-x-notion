@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../../styles/base.css';
-import { getNotionProperties, getNotionSandwich, getNotionCategories } from '../utils';
+import { getNotionSandwich, getNotionCategories } from '../utils';
 import saladImg from "../assets/salad.webp";
 import { Image } from 'astro:assets';
 import sandwich from '../../data.json'
@@ -47,11 +47,12 @@ const categories = await Promise.all(
 
 const sandwiches = await Promise.all(
 	notionSandwich.map(async ({ properties }: any) => {
-/* 		console.log("recipe",properties); */
+		console.log("getting sandwichesss");
 		let title = '';
 /* 		let img = '';
       let imgName = ''; */
 		let description = '';
+      let category = '🍱 Other';
 /* 		if (properties.Picture.files[0]) {
 			img = properties.Picture.files[0].file.url || '';
          imgName = properties.Picture.files[0].name
@@ -62,10 +63,13 @@ const sandwiches = await Promise.all(
 		if (properties.Description.rich_text[0]) {
 			description = properties.Description.rich_text[0].plain_text || '';
 		}
+      if (properties.Category.select !== null) {
+         category = properties.Category.select.name;
+      }
       const id = properties.ID.unique_id.number;
 		const isAvailable = properties.Available.checkbox;
 		const price = properties.Price.number;
-		return { id, title, isAvailable, price, description };
+		return { id, title, isAvailable, price, description, category };
 	})
 );
 
@@ -85,5 +89,5 @@ saveObjectsToJson(sandwiches, 'data.json');
 ---
 
 <Layout title="Menu">
-	<MenuComponent categories={categories} sandwiches={sandwich} drink={sandwich} other={sandwich} client:load/>
+	<MenuComponent categories={categories} sandwiches={sandwiches} client:load/>
 </Layout>

@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": 16,
+    "title": "AO SANDWICHS",
+    "isAvailable": false,
+    "price": 50,
+    "description": "",
+    "category": "🍱 Other"
+  },
+  {
+    "id": 15,
+    "title": "Another One Sandwichsss",
+    "isAvailable": false,
+    "price": 10,
+    "description": "",
+    "category": "🍱 Other"
+  },
+  {
+    "id": 14,
+    "title": "",
+    "isAvailable": false,
+    "price": null,
+    "description": "",
+    "category": "🍱 Other"
+  },
+  {
+    "id": 13,
+    "title": "Another Sandwich",
+    "isAvailable": false,
+    "price": null,
+    "description": "",
+    "category": "🍱 Other"
+  },
+  {
+    "id": 12,
+    "title": "Nuws Sandiwch",
+    "isAvailable": false,
+    "price": 4,
+    "description": "",
+    "category": "🍱 Other"
+  },
+  {
+    "id": 6,
+    "title": "Toast with Cheese",
+    "isAvailable": true,
+    "price": 2.5,
+    "description": "Crispy bread, melty cheese. Simple & tasty!",
+    "category": "🥪 Sandwich"
+  },
+  {
+    "id": 4,
+    "title": "Toast Ham and Cheese",
+    "isAvailable": true,
+    "price": 3,
+    "description": "Perfect combo of savory ham and melted cheese on crispy bread. Yum!",
+    "category": "🥪 Sandwich"
+  },
+  {
+    "id": 2,
+    "title": "Vegan Sandwich",
+    "isAvailable": true,
+    "price": 3.5,
+    "description": "A vegan sandwich: Fresh veggies, tasty spreads, plant-based protein. Delish & cruelty-free!",
+    "category": "🥪 Sandwich"
+  },
+  {
+    "id": 3,
+    "title": "Chicken Salad Sandwich",
+    "isAvailable": true,
+    "price": 3.5,
+    "description": "Tender chicken mixed with creamy dressing, crunchy veggies, served between two slices of bread. Delicious!",
+    "category": "🥪 Sandwich"
+  }
+]

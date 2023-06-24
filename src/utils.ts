@@ -54,13 +54,13 @@ export const getNotionSandwich = async (options: ClientOptions) => {
           "checkbox": {
             "equals": true
           }
-        },
+        }/* ,
         {
           "property": "Category",
           "select": {
             "equals": "Sandwich"
           }
-        }
+        } */
       ]
     },
   });
