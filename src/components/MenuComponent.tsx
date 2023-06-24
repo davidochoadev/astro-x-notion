@@ -12,11 +12,12 @@ export function MenuComponent({ sandwiches, categories }) {
    (item) => item.category === activeCategory
  );
 
- const getCategoryName = (category) => {
-   return category.split(' ')[1];
+ function getCategoryName(category : any) {
+   if (typeof category === 'string') {
+      return category.split(' ')[1];
+    }
+    return '';
  };
-
- console.log(filtered);
 
   return (
     <main className="grid gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto max-w-screen-2xl px-2 sm:px-6 min-h-[calc(100lvh-80px)]">
@@ -51,82 +52,6 @@ export function MenuComponent({ sandwiches, categories }) {
               </p>
             </button>
           ))}
-          {/*           <button
-            className={`rounded-xl p-3 ${
-              sandwichIsView === true
-                ? "bg-orange-400"
-                : "bg-zinc-700 hover:bg-orange-400"
-            } flex flex-row gap-2 group`}
-            id="sandwich"
-            onClick={() => {
-              if (sandwichIsView === false) {
-                setSandwichIsView(true);
-                setDrinkIsView(false);
-                setOtherIsView(false);
-              }
-            }}
-          >
-            <p className="text-xl">🥪</p>
-            <p
-              className={`${
-                sandwichIsView
-                  ? "text-slate-700"
-                  : "text-white group-hover:text-slate-700"
-              }`}
-            >
-              Sandwich
-            </p>
-          </button>
-          <button
-            className={`rounded-xl p-3 ${
-              drinkIsView === true
-                ? "bg-orange-400"
-                : "bg-zinc-700 hover:bg-orange-400"
-            }  flex flex-row gap-2 group`}
-            onClick={() => {
-              if (drinkIsView === false) {
-                setSandwichIsView(false);
-                setDrinkIsView(true);
-                setOtherIsView(false);
-              }
-            }}
-          >
-            <p className="text-xl">🥤</p>
-            <p
-              className={`${
-                drinkIsView
-                  ? "text-slate-700"
-                  : "text-white group-hover:text-slate-700"
-              }`}
-            >
-              Drinks
-            </p>
-          </button>
-          <button
-            className={`rounded-xl p-3 ${
-              otherIsView === true
-                ? "bg-orange-400"
-                : "bg-zinc-700 hover:bg-orange-400 group"
-            }  flex flex-row gap-2`}
-            onClick={() => {
-              if (otherIsView === false) {
-                setSandwichIsView(false);
-                setDrinkIsView(false);
-                setOtherIsView(true);
-              }
-            }}
-          >
-            <p className="text-xl">🍱</p>
-            <p
-              className={`${
-                otherIsView
-                  ? "text-slate-700"
-                  : "text-white group-hover:text-slate-700"
-              }`}
-            >
-              Others
-            </p>
-          </button> */}
         </div>
       </aside>
       <div className="flex flex-row flex-wrap gap-2 p-4 sm:col-span-2 lg:col-span-3 2xl:col-span-4 sm:pt-28 pb-28">
