@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-export function MenuComponent({ sandwiches, drink, other }) {
+export function MenuComponent({ sandwiches, drink, other, categories }) {
   const [sandwichIsView, setSandwichIsView] = useState(true);
   const [drinkIsView, setDrinkIsView] = useState(false);
   const [otherIsView, setOtherIsView] = useState(false);
+
+  console.log("Sto dentro comp", categories);
 
   return (
     <main className="grid gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto max-w-screen-2xl px-2 sm:px-6 min-h-[calc(100lvh-80px)]">

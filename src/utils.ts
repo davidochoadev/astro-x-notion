@@ -64,8 +64,15 @@ export const getNotionSandwich = async (options: ClientOptions) => {
       ]
     },
   });
-
   return response.results
   .filter((page) => 'properties' in page)
   .map((page) => page);
+}
+
+export const getNotionCategories = async (options: ClientOptions) => {
+  const notion = new Client(options);
+  const response = await notion.databases.retrieve({ database_id: import.meta.env.NOTION_DATABASE });
+/*   console.log("my database is:",response.properties.Category.select.options);
+ */
+  return response.properties.Category.select.options;
 }
