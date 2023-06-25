@@ -87,7 +87,7 @@ export function MenuComponent({ sandwiches, categories }) {
 
 export function Card({ title, description, isAvailable, price }) {
   return (
-    <div className="flex min-w-[18rem] flex-1 flex-col items-center justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6">
+    <div className="flex min-w-[18rem] flex-1 flex-col items-start justify-start gap-2 rounded-xl border border-gray-700 bg-gray-800 p-6">
       {/*                 <div className="flex h-[200px] w-[200px] items-center justify-center rounded-xl bg-white">
       {item.img !== "" ? (
         <img src={item?.img} alt="Food" width={200} height={200} />

@@ -1,43 +1,83 @@
 [
   {
+    "id": 25,
+    "title": "Mojito Mocktail",
+    "isAvailable": true,
+    "price": 5.99,
+    "description": "Non-alcoholic version of the classic Mojito cocktail, featuring lime, mint, and soda.",
+    "category": "🥤 Drinks"
+  },
+  {
+    "id": 24,
+    "title": "Green Tea",
+    "isAvailable": true,
+    "price": 2.5,
+    "description": "Light and fragrant tea made from the leaves of the Camellia sinensis plant.",
+    "category": "🥤 Drinks"
+  },
+  {
+    "id": 23,
+    "title": "Iced Coffee",
+    "isAvailable": true,
+    "price": 4.99,
+    "description": "Chilled coffee beverage with your choice of flavors and sweeteners.",
+    "category": "🥤 Drinks"
+  },
+  {
+    "id": 22,
+    "title": "Orange Juice",
+    "isAvailable": true,
+    "price": 3.49,
+    "description": "Freshly squeezed orange juice, packed with vitamin C.",
+    "category": "🥤 Drinks"
+  },
+  {
+    "id": 21,
+    "title": "Coca-Cola",
+    "isAvailable": true,
+    "price": 1.99,
+    "description": "Classic carbonated soft drink with a refreshing cola flavor.",
+    "category": "🥤 Drinks"
+  },
+  {
     "id": 16,
-    "title": "AO SANDWICHS",
-    "isAvailable": false,
-    "price": 50,
-    "description": "",
-    "category": "🍱 Other"
+    "title": "Italian Sub",
+    "isAvailable": true,
+    "price": 8.99,
+    "description": "Layers of ham, salami, pepperoni, provolone cheese, and assorted toppings on a sub roll, drizzled with Italian dressing.",
+    "category": "🥪 Sandwich"
   },
   {
     "id": 15,
-    "title": "Another One Sandwichsss",
-    "isAvailable": false,
-    "price": 10,
-    "description": "",
-    "category": "🍱 Other"
+    "title": "Reuben",
+    "isAvailable": true,
+    "price": 8.99,
+    "description": "Corned beef, sauerkraut, Swiss cheese, and Russian dressing on rye bread, grilled to perfection.",
+    "category": "🥪 Sandwich"
   },
   {
     "id": 14,
-    "title": "",
-    "isAvailable": false,
-    "price": null,
-    "description": "",
-    "category": "🍱 Other"
+    "title": "Grilled Cheese",
+    "isAvailable": true,
+    "price": 4.99,
+    "description": "Melted cheese sandwiched between buttery, grilled slices of bread.",
+    "category": "🥪 Sandwich"
   },
   {
     "id": 13,
-    "title": "Another Sandwich",
-    "isAvailable": false,
-    "price": null,
-    "description": "",
-    "category": "🍱 Other"
+    "title": "Turkey Club",
+    "isAvailable": true,
+    "price": 7.99,
+    "description": "Sliced turkey, crispy bacon, lettuce, tomato, and mayo on toasted bread.",
+    "category": "🥪 Sandwich"
   },
   {
     "id": 12,
-    "title": "Nuws Sandiwch",
-    "isAvailable": false,
-    "price": 4,
-    "description": "",
-    "category": "🍱 Other"
+    "title": "Tuna Salad Sandwich",
+    "isAvailable": true,
+    "price": 7.49,
+    "description": "Flaked tuna mixed with mayo, celery, and onions served on your choice of bread.",
+    "category": "🥪 Sandwich"
   },
   {
     "id": 6,

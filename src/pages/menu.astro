@@ -72,8 +72,8 @@ const sandwiches = await Promise.all(
 		return { id, title, isAvailable, price, description, category };
 	})
 );
-
-const saveObjectsToJson = async (objects, filename) => {
+// Convert Data and create file .json
+/* const saveObjectsToJson = async (objects, filename) => {
    console.log("Converting Data to JSON")
   try {
     const json = JSON.stringify(objects, null, 2);
@@ -84,8 +84,8 @@ const saveObjectsToJson = async (objects, filename) => {
   }
 };
 
-// Example usage
-saveObjectsToJson(sandwiches, 'data.json');
+// Saving to data.json
+saveObjectsToJson(sandwiches, 'data.json'); */
 ---
 
 <Layout title="Menu">
