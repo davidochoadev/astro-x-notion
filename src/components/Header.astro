@@ -6,12 +6,12 @@ const {currentPath} = Astro.props;
 ---
 
 <header 
-   class="fixed bottom-0 w-full h-max flex flex-row justify-center items-center sm:top-0 sm:left-0 z-10"
+   class="fixed bottom-0 w-full h-max flex flex-row justify-center items-center sm:top-0 sm:left-0 z-10 "
 >
    <nav id="navbar"
-      class="border border-slate-700 w-full mx-4 my-4 bg-slate-800 rounded-xl p-4 flex flex-row justify-center items-center gap-6 sm:justify-end"
+      class="grid grid-cols-3 place-items-center border-t sm:border-b border-border w-full m-0 bg-secondary rounded-none sm:rounded-none p-2 sm:p-4 sm:flex sm:flex-row justify-center items-center gap-4 sm:justify-end sm:mx-0 sm:my-0 space-x-5 sm:space-x-0 shadow-md "
    >
-      <a href="/" class={`flex flex-col justify-center items-center w-max ${currentPath === "" ? "text-orange-400" : "hover:text-orange-400"} sm:flex-row sm:gap-2`}>
+      <a href="/" class={`flex flex-col justify-center items-center w-max py-2 px-4 rounded-lg ${currentPath === "" ? "text-selected bg-selected-area" : "text-text hover:bg-selected-area hover:text-selected"} sm:flex-row sm:gap-2 transition-all duration-300 ease-in-out`}>
          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
@@ -30,7 +30,7 @@ const {currentPath} = Astro.props;
          >
          <p>Home</p>
       </a>
-      <a href="/menu" class={`flex flex-col justify-center items-center w-max ${currentPath === "menu" ? "text-orange-400" : "hover:text-orange-400"} sm:flex-row sm:gap-2`}>
+      <a href="/menu" class={`flex flex-col justify-center items-center w-max py-2 px-4 rounded-lg ${currentPath === "menu" ? "text-selected bg-selected-area" : "text-text hover:bg-selected-area hover:text-selected"} sm:flex-row sm:gap-2 transition-all duration-300 ease-in-out`}>
          <svg
             xmlns="http://www.w3.org/2000/svg"
             class="ionicon"
@@ -46,7 +46,7 @@ const {currentPath} = Astro.props;
          >
          <p>Menu</p>
       </a>
-      <a href="/contacts" class={`flex flex-col justify-center items-center w-max ${currentPath === "contacts" ? "text-orange-400" : "hover:text-orange-400"} sm:flex-row sm:gap-2`}>
+      <a href="/contacts" class={`flex flex-col justify-center items-center w-max py-2 px-4 rounded-lg ${currentPath === "contacts" ? "text-selected bg-selected-area" : "text-text hover:bg-selected-area hover:text-selected"} sm:flex-row sm:gap-2 transition-all duration-300 ease-in-out`}>
          <svg
             width="24"
             xmlns="http://www.w3.org/2000/svg"
